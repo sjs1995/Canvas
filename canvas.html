@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<document>
+    <html>
+        <head>
+            <title>canvas训练</title>
+        </head>
+        <body>
+            <canvas id="drawing" width="1000" height="1000">A drawing of something.</canvas>
+            <script>
+                var drawing = document.getElementById("drawing");
+                if (drawing.getContext){
+                    var context = drawing.getContext("2d");
+                    context.fillStyle = "red";
+                    context.fillRect(10, 10, 50, 50);
+                    context.fillStyle = "yellow";
+                    context.fillRect(30, 30, 50, 50);
+                    context.strokeStyle = "blue";
+                    context.strokeRect(50, 50, 50, 50);
+                    context.clearRect(40, 40, 10, 10);
+
+                    context.beginPath();
+                    context.arc(200, 200, 100, 0, 2 * Math.PI, false);
+                    context.moveTo(290, 200);
+                    context.arc(200, 200, 90, 0, 2 * Math.PI, false);
+
+                    context.moveTo(200, 200);
+                    context.lineTo(200, 120);
+
+                    context.moveTo(200, 200);
+                    context.lineTo(280, 200);
+
+                    context.strokeStyle = "black";
+                    context.stroke();
+                    if (context.isPointInPath(20000, 18000)){
+                        alert("Point (210, 200) is in the path.");
+                    }
+                }
+            </script>
+        </body>
+    </html>
+</document>
