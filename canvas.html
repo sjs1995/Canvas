@@ -24,16 +24,22 @@
                     context.arc(200, 200, 90, 0, 2 * Math.PI, false);
 
                     context.moveTo(200, 200);
-                    context.lineTo(200, 120);
+                    context.lineTo(200, 130);
 
                     context.moveTo(200, 200);
-                    context.lineTo(280, 200);
+                    context.lineTo(270, 200);
 
                     context.strokeStyle = "black";
                     context.stroke();
                     if (context.isPointInPath(20000, 18000)){
                         alert("Point (210, 200) is in the path.");
                     }
+
+                    context.font = "bold 14px Arial";
+                    context.textAlign = "center";
+                    context.textBaseline = "middle";
+                    context.fillStyle = "black";
+                    context.fillText("12", 200, 120);
                 }
             </script>
         </body>
