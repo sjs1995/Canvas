@@ -17,9 +17,13 @@
                     context.shadowBlur = 4;
                     context.shadowColor = "rgba(0, 0, 0, 0.5)";
 
+                    var gradient = context.createLinearGradient(30, 30, 70, 70);
+                    gradient.addColorStop(0, "white");
+                    gradient.addColorStop(1, "black");
+
                     context.fillStyle = "red";
                     context.fillRect(10, 10, 50, 50);
-                    context.fillStyle = "yellow";
+                    context.fillStyle = gradient;
                     context.fillRect(30, 30, 50, 50);
                     context.strokeStyle = "blue";
                     context.strokeRect(50, 50, 50, 50);
